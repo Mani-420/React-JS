@@ -1,11 +1,40 @@
+import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import authService from './appwrite/auth';
+import { login, logout } from './store/authSlice';
+import { Footer, Header } from './components';
 
 function App() {
-  return (
-    <>
-      <h1 className="bg-blue-400 text-3xl">Hello, World!</h1>
-    </>
-  );
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    authService
+      .getCurrentUser()
+      .then((userData) => {
+        if (userData) {
+          dispatch(login({ userData }));
+        } else {
+          dispatch(logout());
+        }
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+      <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
+        <div className="w-full block">
+          <Header />
+          <main>{/* <Outlet /> */}</main>
+          <Footer />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
