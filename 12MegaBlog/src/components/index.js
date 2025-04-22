@@ -1,5 +1,5 @@
-import Header from './header/Header';
-import Footer from './footer/Footer';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import Container from './container/Container';
 import Logo from './Logo';
 import LogoutBtn from './Header/LogoutBtn';
@@ -8,6 +8,10 @@ import Signup from './Signup';
 import Login from './Login';
 import PostCard from './PostCard';
 import PostForm from './post-form/PostForm';
+import AuthLayout from './AuthLayout';
+import Button from './Button';
+import Input from './Input';
+import Select from './Select';
 
 export {
   Header,
@@ -19,5 +23,9 @@ export {
   Signup,
   Login,
   PostCard,
-  PostForm
+  PostForm,
+  AuthLayout,
+  Button,
+  Input,
+  Select
 };
