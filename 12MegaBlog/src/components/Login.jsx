@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login as authLogin } from '../store/authSlice.js';
-import { Button, Input, Logout } from '/index.js';
+import { Button, Input } from './index.js';
 import { useDispatch } from 'react-redux';
 import authService from '../appwrite/auth.js';
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 function Login() {
   const navigate = useNavigate();
