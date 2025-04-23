@@ -14,6 +14,7 @@ import EditPost from './pages/EditPost';
 import Post from './pages/Post';
 import AllPosts from './pages/AllPost';
 
+// createBrowserRouter is used to create a router object that is used to create a SPAs
 const router = createBrowserRouter([
   {
     path: '/',
