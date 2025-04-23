@@ -1,3 +1,5 @@
+// Add post page for adding posts to the blog
+
 import React from 'react';
 import { Container, PostForm } from '../components';
 
